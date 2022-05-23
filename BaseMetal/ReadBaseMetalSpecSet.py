@@ -19,8 +19,8 @@ for(root, directories, files) in os.walk(dir_path):
                     type_and_grade = jsonData['base_metals']['type_and_grade']
                     to_type_and_grade = jsonData['base_metals']['to_type_and_grade']
 
-                    key = material_spec+" "+type_and_grade
-                    to_key = to_material_spec+" "+to_type_and_grade
+                    key = "(spec: "+material_spec+"), (type:"+type_and_grade+")"
+                    to_key = "(spec: "+to_material_spec+"), (type:"+to_type_and_grade+")"
                     counts[key] = counts.get(key, 0) + 1
                     counts[to_key] = counts.get(to_key, 0) + 1
 
