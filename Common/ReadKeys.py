@@ -19,8 +19,8 @@ for(root, directories, files) in os.walk(dir_path):
                 jsonData = json.load(file)
             for key in jsonData[find_section].keys():
                 counts[key] = counts.get(key, 0)+1
-
-for item in counts.items():
+                
+for item in sorted(counts.items(), key=lambda x : x[1], reverse=True):
     print(item)
 
 print(len(counts))
