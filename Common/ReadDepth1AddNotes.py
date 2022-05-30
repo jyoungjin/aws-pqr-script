@@ -11,8 +11,8 @@ for(root, directories, files) in os.walk(dir_path):
             file_path = os.path.join(root, file)
             with open(file_path, 'r') as file:
                 jsonData = json.load(file)
-            if 'other' in jsonData['gas']:
-               jsonData['gas']['others'] = jsonData['gas']['other']
-               del jsonData['gas']['other']
+            if 'other' in jsonData['Gas']:
+               jsonData['Gas']['others'] = jsonData['Gas']['other']
+               del jsonData['Gas']['other']
                with open(file_path, 'w', encoding='utf-8') as mk_f:
                    json.dump(jsonData, mk_f, indent=4, ensure_ascii=False)
