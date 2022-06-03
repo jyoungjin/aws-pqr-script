@@ -18,9 +18,8 @@ for(root, directories, files) in os.walk(dir_path):
                     f_no = jsonData['filler_metals']['f_no']
 
                     if type(specification) != dict:
-                        key = specification + " " + classification + " " + f_no
+                        key = "spec: "+specification + ", class: " + classification + ", f_no:" + f_no
                         counts[key] = counts.get(key, 0)+1
-
 
 for item in counts.items():
     print(item)
