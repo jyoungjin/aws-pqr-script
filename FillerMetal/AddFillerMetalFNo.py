@@ -16,13 +16,9 @@ for(root, directories, files) in os.walk(dir_path):
                     specification = jsonData['filler_metals']['specification']
                     classification = jsonData['filler_metals']['classification']
 
-                    if type(specification) == dict:
-                        for process in specification:
-                            key = "spec: "+specification[process] + ", class: " + classification[process]
-                            counts[key] = counts.get(key, 0)+1
-                    else:
-                        key = "spec: " + specification + ", class: " + classification
-                        counts[key] = counts.get(key, 0) + 1
+                    if type(specification) != dict:
+                        key = "spec: "+specification + ", class: " + classification
+                        counts[key] = counts.get(key, 0)+1
 
 for item in counts.items():
     print(item)
