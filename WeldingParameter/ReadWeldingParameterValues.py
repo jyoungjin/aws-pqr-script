@@ -22,7 +22,7 @@ for(root, directories, files) in os.walk(dir_path):
                     if key == find_key:
                         counts[object[find_key]] = counts.get(object[find_key], 0)+1
 
-for item in sorted(counts.items()):
+for item in sorted(counts.items(), key=lambda x: x[1], reverse=True):
     print(item)
 
 print(len(counts))
